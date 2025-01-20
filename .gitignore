@@ -1,0 +1,13 @@
+# Ignore VENV
+venv/
+env/
+myenv/
+
+# Ignore SQLite database files
+*.sqlite
+*.sqlite3
+
+# Ignore SQLite temp and journal files
+*.db-journal
+*.db-shm
+*.db-wal
