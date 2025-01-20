@@ -20,6 +20,9 @@ class IceCream(models.Model):
     description = models.TextField(blank=False)
     is_on_main = models.BooleanField(default=False)
     is_published = models.BooleanField(default=True)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE)
+    toppings = models.ManyToManyField('Topping', blank=False)
+    wrapper = models.OneToOneField('Wrapper', on_delete=models.SET_NULL)
 
 
 # Категории
