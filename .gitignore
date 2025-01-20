@@ -11,3 +11,7 @@ myenv/
 *.db-journal
 *.db-shm
 *.db-wal
+
+# Python bytecode files
+*.pyc
+__pycache__/
