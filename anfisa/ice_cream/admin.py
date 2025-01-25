@@ -1,9 +1,6 @@
 from django.contrib import admin
 
-from .models import Category, IceCream, Topping, Wrapper
+from .models import Category
 
 
 admin.site.register(Category)
-admin.site.register(IceCream)
-admin.site.register(Topping)
-admin.site.register(Wrapper)
