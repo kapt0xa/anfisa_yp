@@ -15,9 +15,7 @@ class Topping(PublishedModel):
 
 
 class Wrapper(PublishedModel):
-    title = models.CharField(
-        max_length=256
-    )
+    title = models.CharField(max_length=256)
 
 
 class IceCream(PublishedModel):
@@ -29,11 +27,13 @@ class IceCream(PublishedModel):
         on_delete=models.SET_NULL,
         related_name='ice_cream',
         null=True,
-        blank=True
+        blank=True,
+        verbose_name='Обёртка'
     )
     category = models.ForeignKey(
         Category,
         on_delete=models.CASCADE,
-        related_name='ice_creams'
+        related_name='ice_creams',
+        verbose_name='Категория'
     )
-    toppings = models.ManyToManyField(Topping)
+    toppings = models.ManyToManyField(Topping, verbose_name='Топпинги')
