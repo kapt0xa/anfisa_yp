@@ -8,14 +8,23 @@ class Category(PublishedModel):
     slug = models.SlugField(max_length=64, unique=True)
     output_order = models.PositiveSmallIntegerField(default=100)
 
+    class Meta:
+        verbose_name = 'Категория'
+
 
 class Topping(PublishedModel):
     title = models.CharField(max_length=256)
     slug = models.SlugField(max_length=64, unique=True)
 
+    class Meta:
+        verbose_name = 'Топпинги'
+
 
 class Wrapper(PublishedModel):
     title = models.CharField(max_length=256)
+
+    class Meta:
+        verbose_name = 'Обёртки'
 
 
 class IceCream(PublishedModel):
@@ -37,3 +46,6 @@ class IceCream(PublishedModel):
         verbose_name='Категория'
     )
     toppings = models.ManyToManyField(Topping, verbose_name='Топпинги')
+
+    class Meta:
+        verbose_name = 'Мороженое'
