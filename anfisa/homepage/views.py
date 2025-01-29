@@ -11,6 +11,7 @@ def index(request):
         IceCream.objects
         .filter(is_on_main=True, is_published=True)
         .order_by('title')
+        .select_related('wrapper')
     )
     context = {
         'ice_cream_list': ice_cream_list,
