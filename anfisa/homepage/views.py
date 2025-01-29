@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 
 from ice_cream.models import IceCream
@@ -5,8 +6,12 @@ from ice_cream.models import IceCream
 
 def index(request):
     template = 'homepage/index.html'
-    # Запишите в переменную ice_cream_list новый QuerySet
-    ice_cream_list = IceCream.objects.all()
+    # Доработайте запрос.
+    ice_cream_list = (
+        IceCream.objects
+        .filter(is_on_main=True, is_published=True)
+        .order_by('title')
+    )
     context = {
         'ice_cream_list': ice_cream_list,
     }

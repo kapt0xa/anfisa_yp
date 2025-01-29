@@ -8,5 +8,10 @@
     <h3>{{ ice_cream.title }}</h3>
     <p>ID: {{ ice_cream.id }}</p>
     <p>{{ ice_cream.description }}</p>
+    {% comment %} Выведите название обёртки внутри тега <p></p> {% endcomment %}
+    <p>{{ ice_cream.wrapper__title }}</p>
+    {% comment %} если решили через select_related: 
+    {{ ice_cream.wrapper.title }}
+    {% endcomment %}
   {% endfor %}
 {% endblock %}

@@ -36,7 +36,6 @@ class IceCreamAdmin(admin.ModelAdmin):
     filter_vertical = ('toppings',)
 
 
-# Регистрируем класс с настройками админки для моделей IceCream и Category:
 admin.site.register(IceCream, IceCreamAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Topping)
