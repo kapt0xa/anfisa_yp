@@ -5,5 +5,10 @@
 {% endblock %}
 
 {% block content %}
-  <!-- Место для HTML-формы -->
+  <form action="{% url 'contest:accepted' %}">
+    <table>
+      {{ form }}
+    </table>
+    <input type="submit" value="Отправить">
+  </form>
 {% endblock %}
