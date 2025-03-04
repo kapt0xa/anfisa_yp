@@ -11,9 +11,7 @@
     </table>
     <input type="submit" value="Отправить">
   </form>
-  {% with data=request.GET %}
-    {% if form.is_valid %}
-      <h2>Рецепт мороженого "{{ data.title }}" принят на конкурс!</h2>
-    {% endif %}
-  {% endwith %}
+  {% if form.is_valid %}
+    <h2>Рецепт мороженого "{{ request.GET.title }}" принят на конкурс!</h2>
+  {% endif %}
 {% endblock %}
